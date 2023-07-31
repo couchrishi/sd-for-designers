@@ -1,0 +1,12 @@
+steps:
+  # Build the custom container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west4-docker.pkg.dev/anthos-multicloud-demo-354204/ethlas-sd-repo/sd-component-image:latest', '.']
+
+  # Push the image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'europe-west4-docker.pkg.dev/anthos-multicloud-demo-354204/ethlas-sd-repo/sd-component-image:latest']
+    
+options:
+  machineType: 'N1_HIGHCPU_8'
+  diskSizeGb: '200'

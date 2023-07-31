@@ -1,0 +1,12 @@
+steps:
+# Build the custom container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'YOUR_HOSTNAME/YOUR_PROJECT_ID/YOUR_REPOSITORY/YOUR_IMAGE:YOUR_TAG', '.' ]
+
+# Push the image to Artifact Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'YOUR_HOSTNAME/YOUR_PROJECT_ID/YOUR_REPOSITORY/YOUR_IMAGE:YOUR_TAG']
+
+options:
+  machineType: 'YOUR_MACHINE_TYPE' # E.g. N1_HIGHCPU_8
+  diskSizeGb: 'YOUR_DISK_SIZE_GB' # E.g. 200
