@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# A simple portal for uploading images to a backend GCS bucket
 
 
 This is a react app. The "getting started" part remains the same as any other react app as outlined below in the next section for your reference. Before that, a few important things to take into consideration - 
