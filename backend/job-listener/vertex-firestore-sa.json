@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "anthos-multicloud-demo-354204",
+  "private_key_id": "72217adbe024e029aac8db0d39070f324cf17daf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQC2DO4hvE1gah7e\nLOHJshhVojBCE5Yq3jsoxjk5/WkwMkwG9gWkLwtmAoP22XO0prTX5qaI7YaheHEV\ne+LPpnwNLjZ/ECTSt2Xq9XhW7gqj1TmkHYamSRQ9osbcaD8dQqr209gkEPQy/+c5\nqgMyKv1WOOqt6o0v816fP+bB7UvsnNh2VA7GALv3rzHHhoOFGN81eYXLFA+rVd4p\nV/Xjck3jNnRVbwVJCjyYtWbdI3/KUzSh9svlGAKdhXCRijHBAVBMd/h3Rh10mg8R\nlvgtJrSSBjyr1y3y3Pwn7/hMNqqPPaaeqAUNdZKyXMRNuVWXP6N7JgNJgIh59i7H\nMX5oPTupAgMBAAECgf8hx0Rn/ghdW1Ne5fT+94yMVwudNwUl7xYK+ryjheF+j9aL\ndBqX3CLBSrYxlydg3Y2wgZtkzK2uSCqzUclDviBGUczKxrQOZPkEH4e0mXZf77BC\nQzg4olafGRTM0IrlYvlV0vjHuF2XGOROTr1JEbDvzp+8pUiNHRrxcWnfkagEvsU9\nJelU8qXupBbPiAfH1BsGsiPgqOrr/18qYO1Brg2yMZAi5yNWHz3lF1VAKLnoSnFU\nPtNMUUIdA1gBrnxuALNa5qUZ4Q7zfjXS+YBBkWGGc13tzzQn+/n6tmhyDzkUdNDo\niRxWVTxvR+bm67bm5+V581laHHh5Sz8cS+R0LUECgYEA4OzOlMDOIf9tnlY/ropH\nrDtHee1nuVA8NNf2YuFm1jFz8HzuDEtrJzSSeaPgUID8smES04UwZHwlB8S6e41C\n3+PZRNzlahq17iN9HgGavP+VKfnlQ50VCyhBi+oJwICG7yhm4c4glSeNCzoLlkeX\n5vwI4Ll4ClZiFPIyKGRec5kCgYEAzzO6j6+5cjH7ZeSARywVLl74j4MhUIasSh+G\nzZBKeFzkJnJJmWKeqYKt0yENajZiGIM+wj7MXdR2MsysuEwOlDTfYA4fKtWSaqxu\nVOJq5DUIj01KIGpTWkodg8jAN3QlwvhmwuwZT6L5Bj0OIUbsMQFJMRmt0+mQN/0v\n01GlEpECgYAoUqvSRSJvO+CGA0ZVXxrsSJBOzn3K3hR9EL5uCaSq/6CeW3c9owOp\nuqYLwpJDPGyQ+hAq9XSwfwUQeHdKERANHUblLoi+Vd2JvLkAeR8phNRT+yXb0jxk\njKn7kFCBP0lxdJfFIXP76WRCv/w1y83yrfpVd0qK5+Obh7PwQ9Ye+QKBgQC4VlwW\nsw44AzGWr9hT+WsKqyFVhCLiYj3rX+rs/P7T4Eh1z92coXloc0Mz/0bRBHr3NeRi\nqb3liDxz61WKTNf3kKZd7ZJa6FDvqGIsEJdqWag43VkiR5XKUP+7G6GudB2YPKgn\nqCbIi8QigbUNc+xzmKJGFYNpcXSF6zFePleukQKBgHuvMr1h9/gYBltZFiZpWXP+\nptlrerB+Opio5eSnO/FnZcOhhSMZfCFA2eYRdsOAGCpqmYs88Br1bqa2dYJicOvL\ntFO22XzfQAg+IK6ttKE1Gg14Hrfil6NoIkcgaGevA6jTj9R2nzAAIvUAgGGS2d7z\nisCJhnRKxu5b/Fi4D4pz\n-----END PRIVATE KEY-----\n",
+  "client_email": "sai-vertex@anthos-multicloud-demo-354204.iam.gserviceaccount.com",
+  "client_id": "115797865351886411782",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sai-vertex%40anthos-multicloud-demo-354204.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
