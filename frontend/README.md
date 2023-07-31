@@ -1,5 +1,17 @@
 # Getting Started with Create React App
 
+
+This is a react app. The "getting started" part remains the same as any other react app as outlined below in the next section for your reference. Before that, a few important things to take into consideration - 
+
+1. Change the background image if the one being used right now is too heavy
+2. Make sure that the backend "image-uploader" backend cloud run service is up and running before you test this
+3. Update the /root/src/app.js file with the URL endpoint of the image-uploader cloud run service
+4. This page currently only uploads the images (cap of 10) and shows the status of the upload job. Feel free to build on top of this
+5. Firestore is used in the backend by the cloud run service to track the "image upload job" and also the "vertex pipeline status". You can use the firestore collections to display a job status widge on this same page
+
+
+# Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
