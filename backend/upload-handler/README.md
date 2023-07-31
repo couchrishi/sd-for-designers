@@ -1,4 +1,4 @@
-# Cloud Function with Vertex Pipeline Trigger
+# Cloud Run for handling image uploads
 
 This folder contains code to deploy a Cloud Run that handles images uploaded by the end user. These images are stored under a backend GCS bucket path. These are then used by Vertex AI pipeline jobs to fine tune the OSS stable diffusion model & deploy it eventually
 
