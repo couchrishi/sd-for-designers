@@ -9,7 +9,7 @@ Before deploying the Cloud Function, make sure you have the following:
 - A Google Cloud project set up with Project ID: `YOUR_PROJECT_ID'.
 - [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) installed and configured.
 - Python 3.11 or higher installed locally for development.
-- A Pub/Sub topic named `` set up to send events to the Cloud Function whenever an upload job is completed (The uploads are handled by the code under root/backend/upload-handler )
+- A Pub/Sub topic named `<YOUR_PUBSUB_TOPIC>` should be set up to send events to the Cloud Function whenever an upload job is completed (The uploads are handled by the code under root/backend/upload-handler )
 
 ##  Steps
 

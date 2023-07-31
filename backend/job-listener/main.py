@@ -8,7 +8,7 @@ from google.cloud import pubsub_v1
 PROJECT_ID = os.environ.get('PROJECT_ID')                     # <---CHANGE THIS
 REGION = os.environ.get('REGION')                          # <---CHANGE THIS
 PIPELINE_ROOT = os.environ.get('PIPELINE_ROOT') # <---CHANGE THIS
-TEMPLATE_PATH = os.environ.get('TEMPLATE_PATH')
+TEMPLATE_PATH = os.environ.get('TEMPLATE_PATH') # <---CHANGE THIS
 
 def subscribe(event, context):
     """Triggered from a message on a Cloud Pub/Sub topic.

@@ -1,9 +1,11 @@
 substitutions:
-  _PROJECT_ID: anthos-multicloud-demo-354204
-  _REGION: europe-west4
-  _CLOUD_FUNCTION_NAME: ethlas-sd-vertex-pipeline-trigger
-  _TOPIC_NAME: sd-vertex-pipeline-jobs
-  _SERVICE_ACCOUNT_EMAIL: sai-vertex@anthos-multicloud-demo-354204.iam.gserviceaccount.com
+  _PROJECT_ID: YOUR_PROJECT_ID
+  _REGION: YOUR_REGION
+  _CLOUD_FUNCTION_NAME: YOUR_CLOUD_FUNCTION_NAME
+  _TOPIC_NAME: YOUR_TOPIC_NAME
+  _SERVICE_ACCOUNT_EMAIL: YOUR_SERVICE_ACCOUNT_EMAIL
+  _TEMPLATE_PATH: YOUR_TEMPLATE_PATH_GCS_BUCKET_URL
+  _PIPELINE_ROOT: YOUR_PIPELINE_ROOT_GCS_BUCKET_URL
 
 steps:
   # Step 1: Activate the service account
@@ -12,7 +14,7 @@ steps:
     args:
       - '-c'
       - |
-        gcloud auth activate-service-account --key-file=vertex-firestore-sa.json
+        gcloud auth activate-service-account --key-file=YOUR_SERVICE_ACCOUNT_KEY.json
 
   # Step 2: Deploy the Cloud Function
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -29,14 +31,10 @@ steps:
       - '--source=.'
       - '--service-account=$_SERVICE_ACCOUNT_EMAIL'
       - '--update-env-vars'
-      - 'TEMPLATE_PATH=gs://ethlas-sd-pipeline-root/stable_diffusion_pipeline.yaml'
+      - 'TEMPLATE_PATH=$_TEMPLATE_PATH'
       - '--update-env-vars'
-      - 'PIPELINE_ROOT=gs://ethlas-sd-pipeline-root'
+      - 'PIPELINE_ROOT=$_PIPELINE_ROOT'
       - '--update-env-vars'
       - 'PROJECT_ID=$_PROJECT_ID'
       - '--update-env-vars'
       - 'REGION=$_REGION'
-
-
-      #- 'GOOGLE_FUNCTION_SOURCE=pipelineJobRun.py'
-

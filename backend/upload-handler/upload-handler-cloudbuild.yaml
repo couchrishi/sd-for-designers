@@ -1,0 +1,51 @@
+substitutions:
+  _REGION: YOUR_REGION            # Replace with the desired region (e.g., us-central1)
+  _PROJECT_ID: YOUR_PROJECT_ID    # Replace with your Google Cloud Project ID
+  _SERVICE_NAME: YOUR_SERVICE_NAME# Replace with the desired service name
+  _GCS_BUCKET_NAME: YOUR_BUCKET_NAME # Replace with the Google Cloud Storage bucket name
+  _PUBSUB_TOPIC_NAME: YOUR_TOPIC_NAME # Replace with your desired topic name
+  _CLOUDBUILD_SECRET_NAME: YOUR_SECRET_NAME # Replace with the Firestore secret name
+  _CLOUDRUN_SERVICE_ACCOUNT: YOUR_SERVICE_ACCOUNT_EMAIL # Replace with the Cloud Run service account email
+
+steps:
+  # Step 1: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
+      - '.'
+    dir: 'backend/upload-handler'  # Set the build context to include both backend and upload-handler directories
+
+  # Step 2: Push the Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']
+    dir: 'backend/upload-handler'  # Set the build context again for Step 2
+
+  # Step 3: Deploy the Cloud Run service
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - '$_SERVICE_NAME'
+      - '--image'
+      - 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
+      - '--region'
+      - '$_REGION'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--update-env-vars'
+      - 'APP_PORT=8080'
+      - '--update-env-vars'
+      - 'CLOUDBUILD_PROJECT_ID=$_PROJECT_ID'
+      - '--update-env-vars'
+      - 'CLOUDBUILD_SECRET_NAME=$_CLOUDBUILD_SECRET_NAME'
+      - '--update-env-vars'
+      - 'GCS_BUCKET_NAME=$_GCS_BUCKET_NAME'
+      - '--update-env-vars'
+      - 'PUBSUB_TOPIC_NAME=$_PUBSUB_TOPIC_NAME'
+    dir: 'backend/upload-handler'  # Set the build context again for Step 3
+
+options:
+  logging: CLOUD_LOGGING_ONLY
