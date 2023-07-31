@@ -11,6 +11,8 @@
 
     BUILD_REGIST='your-repo-name'
 
+3. ** Update the service account key path in the Dockerfile
+
 
 3. ** Replace the values in the cloud-build-config.yaml file with your values (YOUR_IMAGE and YOUR_TAG can be newly added. You should already have the values for the other components - YOUR_HOSTNAME, YOUR_PROJECT_ID and YOUR_REPOSITORY) 
 
@@ -28,7 +30,7 @@ options:
   diskSizeGb: '200'
 
 
-3. ** Build your component image by running the Cloud build command ** 
+4. ** Build your component image by running the Cloud build command ** 
 
     gcloud builds submit --config cloud-build-config.yaml .
 

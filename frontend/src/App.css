@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../public/images/cyberpunk-bg.webp');
+  background-size: cover;
+  background-position: top center;
+  color: #00ffff;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 38.4px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  color: #00ffff;
+  padding: 8px 20px;
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.upload-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 255, 0.3);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.upload-btn:hover::before {
+  opacity: 1;
+}
+
+.file-count {
+  font-size: 14px;
+  color: #00ff00;
+  margin-left: 10px;
+}
+
+/* The rest of your CSS styles */

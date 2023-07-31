@@ -1,0 +1,44 @@
+substitutions:
+  _REGION: YOUR_REGION
+  _PROJECT_ID: YOUR_PROJECT_ID
+  _SERVICE_NAME: YOUR_SERVICE_NAME
+  _CLOUDRUN_SERVICE_ACCOUNT: YOUR_CLOUDRUN_SERVICE_ACCOUNT
+  _COMMIT_SHA: $COMMIT_SHA # Make sure to set this value during the build process
+  _UPLOAD_HANDLER_URL: "YOUR_UPLOAD_HANDLER_URL"
+
+steps:
+  # Step 1: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/YOUR_PROJECT_ID/YOUR_SERVICE_NAME:$COMMIT_SHA'
+      - '.'
+    dir: 'frontend'  # Set the build context again for Step 2
+
+  # Step 2: Push the Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/YOUR_PROJECT_ID/YOUR_SERVICE_NAME:$COMMIT_SHA']
+    dir: 'frontend'  # Set the build context again for Step 2
+
+  # Step 3: Deploy the Cloud Run service for the frontend application
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'YOUR_SERVICE_NAME' # Replace with your desired service name for the frontend
+      - '--image'
+      - 'gcr.io/YOUR_PROJECT_ID/YOUR_SERVICE_NAME:$COMMIT_SHA'
+      - '--region'
+      - 'YOUR_REGION'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'  # This flag makes the service public without requiring authentication
+      - '--service-account'
+      - 'YOUR_CLOUDRUN_SERVICE_ACCOUNT'
+      - '--update-env-vars'
+      - 'UPLOAD_HANDLER_URL=YOUR_UPLOAD_HANDLER_URL' 
+    dir: 'frontend' 
+
+options:
+  logging: CLOUD_LOGGING_ONLY
