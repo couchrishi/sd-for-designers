@@ -3,7 +3,7 @@ A fully automated workflow for triggering, running &amp; managing fine tuning, t
 
 ## Description
 
-Sd-aa-S is a full automated MLOps pipeline for triggering, managing & tracking Stable diffusion finetuning jobs on GCP using GCP components such as Google Cloud Storage, Cloud Build, Cloud PubSub, Firestore, Cloud Run, Cloud Functions and Vertex AI. It aims to simplify the ML workflows for tuning Stable diffusion using different techniques, starting with Dreambooth. Support for Lora, ControlNet etc. coming soon. [Explain how it can benefit users or what problems it solves]. The project is targeted ML/Data Engineers, Data Scientists & anybody else interested in or on the road towards building a platform for finetuning stable diffusion at scale. 
+Sd-aa-S is a full automated MLOps pipeline for triggering, managing & tracking Stable diffusion finetuning jobs on GCP using GCP components such as Google Cloud Storage, Cloud Build, Cloud PubSub, Firestore, Cloud Run, Cloud Functions and Vertex AI. It aims to simplify the ML workflows for tuning Stable diffusion using different techniques, starting with Dreambooth. Support for Lora, ControlNet etc. coming soon. The project is targeted ML/Data Engineers, Data Scientists & anybody else interested in or on the road towards building a platform for finetuning stable diffusion at scale. 
 
 ## Three Parts
 
